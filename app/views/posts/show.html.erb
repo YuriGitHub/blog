@@ -1,0 +1,22 @@
+<h3>Ttitle: <%= @post.title %></h3>
+<h5>Content: 
+<%= @post.content %></h5>
+<br/>
+<br/>
+<div class="center">
+<%= render @post.comments %>
+<% unless @current_user.nil? %>
+<%= form_for([@post, @post.comments.build]) do |f|%>
+    <h3>Add Comment</h3>
+
+    <%= f.label :content %>
+  <%= f.text_area :content %>
+    <br/>
+    <%= f.submit %>
+
+        <% end %>
+<% end %>
+
+</div>
+
+

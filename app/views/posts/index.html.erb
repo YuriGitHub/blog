@@ -1,0 +1,12 @@
+  <%= flash[:status_ok] %>
+<% @posts.each do |p| %>
+
+    <h4>Title: <%= p.title %> </h4>
+    <h5>Content <%= p.short_content %></h5>
+    <h5>User : <%= p.user.first_name %></h5>
+    <%= link_to 'Show', p %>
+    <%= link_to 'Edit', edit_post_path(p) %>
+    <%= link_to 'Destroy', p, method: :delete%>
+    <br/>
+
+<% end %>

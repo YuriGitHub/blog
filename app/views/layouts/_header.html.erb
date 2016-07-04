@@ -1,0 +1,19 @@
+<!--Створити partial _header з посиланнями:-->
+<!--Posts | Create Post | Login | Register-->
+
+<!--Для зареєстрованого юзера замість Login i Register виводити-->
+<!--Edit my Account  | Logout-->
+
+<%= link_to 'Posts', posts_path %>
+<%= link_to 'Create Post', new_post_path %>
+
+<% unless @current_user.nil? %>
+  <%=  link_to 'edit my account', registration_edit_user_path %>
+    <%= link_to 'logout', sessions_destroy_path, method: :delete %>
+<% else %>
+<%= link_to 'log in', sessions_new_path %>
+<%= link_to 'register', registration_path %>
+
+<% end %>
+
+

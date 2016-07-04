@@ -1,0 +1,16 @@
+<br/>
+<%= comment.user.first_name %>
+<br/>
+<%=  time_ago_in_words(comment.updated_at) %> ago
+<br/>
+  <%= comment.content %>
+<br/>
+<% if comment.user == @current_user %>
+
+
+<%= link_to 'Destroy Comment', comment_path(comment),
+            method: :delete %>
+<%= link_to 'Update Comment', comments_path(comment.id) %>
+<br/>
+
+<% end %>

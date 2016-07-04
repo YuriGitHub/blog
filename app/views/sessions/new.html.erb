@@ -1,0 +1,12 @@
+<%= flash[:status_ok] %>
+<%= form_for @user, url: '/sessions' do |f| %>
+    <h3><%= params[:error] %></h3>
+    <br/>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <%= f.submit %>
+
+<% end %>
+
